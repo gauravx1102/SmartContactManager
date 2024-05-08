@@ -2,7 +2,10 @@ package com.scm.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+// import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 @Controller
 public class PageController {
@@ -18,6 +21,24 @@ public class PageController {
         model.addAttribute("Github", "https://github.com/gauravx1102");
         return "home";
 
+    }
+
+    // about
+
+
+    @GetMapping("/about")
+    public String aboutPage(Model model){
+        model.addAttribute("isLogin",true);
+        System.out.println("Page loading");
+        return "about";
+    }
+
+    //services
+
+    @GetMapping("services")
+    public String servicesPage(){
+        System.out.println("Services page loading");
+        return "services";
     }
 
 }
