@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" 
+th:replace="~{base :: parnet(~{::#content},~{::title},~{::script})}"
+>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        Services Page
+    </title>
 </head>
 <body>
-    <h1>This is services Page</h1>
-
-    <div th:replace="~{base :: parent(~{::.third_content})}">
-        <section id="main_content">                                          // id is targeted through (#)
-            <h1>This is the Dynamic services passed to base fragment</h1>
-        </section>
-        <section id="second_content">
-            <h1>This is second content</h1>
-        </section>
-        <section class="third_content">                                       // class is targeted through (.)
-            <h1>This is the third content</h1>
-        </section>
-    </div>
+    <section id="content">
+        <h1>Welcome to Services page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolorem magni eum.</p>
+    </section>
+   
+    <script>
+        console.log("Please take our services and thanks us later ")
+    </script>
+    <script>
+        console.log("How are you")
+    </script>
 </body>
 </html>

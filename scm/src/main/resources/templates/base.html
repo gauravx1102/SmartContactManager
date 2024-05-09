@@ -1,12 +1,39 @@
-<div class="parent-fragment" th:fragment="parent(content)">
-    <h1>This is parent fragment</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi odio est ullam ut dolorum sequi harum et quo nequeatque iure provident, porro non! Odio ea sunt odit deserunt quibusdam?</p>
+<!DOCTYPE html>
+<html 
+lang="en"
+th:fragment="parnet(content,title,script)"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">Base Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-    <div th:replace="${content}"></div>
+</head>
+<body>
+    <ul class="p-4">
+        <li>
+            <a th:href="@{/home}">Home</a>
+        </li>
+        <li>
+            <a th:href="@{/about}">About</a>
+        </li>
+        <li>
+            <a th:href="@{/services}">Services</a>
+        </li>
+    </ul>
 
-</div>
-
-<div th:fragmet="test(content)">
-    <div th:replace="${content}">
+    <div class="p-4">
+    <section th:replace="${content}"></section>
     </div>
-</div>
+    <footer class="p-4">
+        Footer : Learn Code with me
+    </footer>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <th:block th:replace="${script}">
+    </th:block>    
+
+</body>
+</html>

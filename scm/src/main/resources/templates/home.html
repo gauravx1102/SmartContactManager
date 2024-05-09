@@ -1,32 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" 
+th:replace="~{base :: parnet(~{::#content},~{::title},~{::script})}"
+>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Include Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-
-    <!-- <link rel="stylesheet" th:href="@{'/css/output.css'}" /> -->
+    <title>
+        Home page
+    </title>
 </head>
 <body>
-    <div class="bg-gray-400 p-4 w-1/2 p-4 flex flex-col justify-center items-center mx-auto mt-4">
-        <h1 class="text-2xl font-bold " th:text="${Name}">Welcome to Home Page</h1>
-        <p> YouTube Channel : <span th:text="${YouTube}"></span></p>
-        <p> GitHub Repo : <span th:text="${Github}"></span></p>
+    <section id="content">
+        <h1>Welcome to home page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolorem magni eum.</p>
 
-        <a th:href="${Github}" class="text-blue-100 hover:underline">Click Here to open</a>
-        <p class="mt-4"> 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe sit quisquam recusandae, maiores optio officiis!
-             Unde, repellat quod! Nulla odio mollitia veniam officiis sunt totam. Aut quasi soluta, non iusto dolorem amet praesentium
-             exercitationem quas nobis architecto sint dolore veritatis perferendis mollitia quos alias aliquam itaque. Culpa, quas consectetur?
-        </p>
-        <div>
-        <button class="px-3 py-3 rounded bg-blue-700 text=white hover:bg-blue-200">click here</button>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-
+    </section>
+    <script>
+        console.log("This is the home page of SCM")
+    </script>
 </body>
 </html>
