@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PageController {
 
     @RequestMapping("/home")
-    public String home(Model model){
+    public String home(Model model) {
         System.out.println("Home page handler");
-        
-        //Sending Data to View
+
+        // Sending Data to View
 
         model.addAttribute("Name", "Substing Technologies");
         model.addAttribute("YouTube", "gauravx1102");
@@ -25,20 +25,37 @@ public class PageController {
 
     // about
 
-
     @GetMapping("/about")
-    public String aboutPage(Model model){
-        model.addAttribute("isLogin",true);
+    public String aboutPage(Model model) {
+        model.addAttribute("isLogin", true);
         System.out.println("Page loading");
         return "about";
     }
 
-    //services
+    // services
 
     @GetMapping("services")
-    public String servicesPage(){
+    public String servicesPage() {
         System.out.println("Services page loading");
         return "services";
+    }
+
+    @GetMapping("contact")
+    public String conatactPage() {
+        System.out.println("Contact page loading");
+        return "contact";
+    }
+
+    @GetMapping("/login")
+    public String loginPage() {
+        System.out.println("Login page loading");
+        return "login";
+    }
+
+    @GetMapping("/signup")
+    public String signupPage() {
+        System.out.println("Login page loading");
+        return "signup";
     }
 
 }
